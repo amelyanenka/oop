@@ -7,12 +7,12 @@ namespace Project2
 	{
 	public:
 	
-		A(int b, int t);
+		A(double b, double t);
 		A();
-		void set(int b, int t);
+		void set(double b, double t);
 		System::String^ info();
 		~A();
-		int* bottomWidth, * topWidth;
+		double* bottomWidth, * topWidth;
 	};
 
 }

@@ -80,14 +80,14 @@ namespace Project2 {
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(99, 55);
+			this->textBox1->Location = System::Drawing::Point(99, 29);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(96, 20);
 			this->textBox1->TabIndex = 0;
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(99, 29);
+			this->textBox2->Location = System::Drawing::Point(99, 55);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(96, 20);
 			this->textBox2->TabIndex = 1;
@@ -189,9 +189,19 @@ namespace Project2 {
 #pragma endregion
 		private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 
-			B b(0, 0, 0);
-			b.set(Convert::ToInt32(textBox1->Text), Convert::ToInt32(textBox2->Text), Convert::ToInt32(textBox3->Text));
-			textBox4->Text = "" + b.calculate();
+			B classB(0, 0, 0);
+
+			double a, b, h;
+
+			if (Double::TryParse(textBox1->Text, a) && Double::TryParse(textBox2->Text, b) && Double::TryParse(textBox3->Text, h)) {
+				classB.set(a, b, h);
+				textBox4->Text = classB.calculate().ToString();
+			}
+			else {
+				MessageBox::Show("Only numbers are allowed", "Info", MessageBoxButtons::OK, MessageBoxIcon::Exclamation);
+			}
+
 		}
+
 	};
 }

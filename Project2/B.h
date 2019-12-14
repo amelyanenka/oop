@@ -5,17 +5,15 @@ namespace Project2
 	ref class B : public A
 	{
 	public:
-		B(int b, int t, int h) : A(b, t)
+		B(double b, double t, double h) : A(b, t)
 		{
-			height = new int;
+			height = new double;
 			*height = h;
 		}
 
-		void set(int b, int t, int h);
+		void set(double b, double t, double h);
 
-		int calculate() {
-			return *height * (*bottomWidth + *topWidth) / 2;
-		}
+		double calculate();
 
 		~B() {
 			delete bottomWidth;
@@ -24,7 +22,7 @@ namespace Project2
 		}
 	
 	public:
-		int* height;
+		double* height;
 	};
 }
 

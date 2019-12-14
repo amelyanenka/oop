@@ -3,21 +3,21 @@
 using std::string;
 using namespace Project2;
 
-A::A(int b, int t) {
-	bottomWidth = new int;
-	topWidth = new int;
+A::A(double b, double t) {
+	bottomWidth = new double;
+	topWidth = new double;
 	*bottomWidth = b;
 	*topWidth = t;
 }
 
 A::A() {
-	bottomWidth = new int;
-	topWidth = new int;
+	bottomWidth = new double;
+	topWidth = new double;
 	*bottomWidth = 0;
 	*topWidth = 0;
 }
 
-void A::set(int b, int t) {
+void A::set(double b, double t) {
 
 	*bottomWidth = b;
 	*topWidth = t;
